@@ -28,15 +28,20 @@ import SectionLogin from "./Sections/SectionLogin.jsx";
 import SectionExamples from "./Sections/SectionExamples.jsx";
 import SectionDownload from "./Sections/SectionDownload.jsx";
 
+import ChoiceCard from "components/molecules/ChoiceCard.jsx"
+
 import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
 
-class Components extends React.Component {
-  render() {
-    const { classes, ...rest } = this.props;
+
+
+function Components(props){
+  
+    const { classes, ...rest } = props;
+
     return (
       <div>
         <Header
-          brand="Material Kit React"
+          brand="Passahype"
           rightLinks={<HeaderLinks />}
           fixed
           color="transparent"
@@ -47,13 +52,15 @@ class Components extends React.Component {
           {...rest}
         />
         <Parallax image={require("assets/img/bg4.jpg")}>
+        <ChoiceCard/>
+
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
                 <div className={classes.brand}>
-                  <h1 className={classes.title}>Material Kit React.</h1>
+                  <h1 className={classes.title}>Passahype.</h1>
                   <h3 className={classes.subtitle}>
-                    A Badass Material-UI Kit based on Material Design.
+                    Where influencers and dancers meet.
                   </h3>
                 </div>
               </GridItem>
@@ -62,7 +69,9 @@ class Components extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
-          <SectionBasics />
+          Hello testing
+          <ChoiceCard>This is a card</ChoiceCard>
+          {/* <SectionBasics />
           <SectionNavbars />
           <SectionTabs />
           <SectionPills />
@@ -80,12 +89,12 @@ class Components extends React.Component {
             </Link>
           </GridItem>
           <SectionExamples />
-          <SectionDownload />
+          <SectionDownload /> */}
         </div>
         <Footer />
       </div>
     );
-  }
+  
 }
 
 export default withStyles(componentsStyle)(Components);
